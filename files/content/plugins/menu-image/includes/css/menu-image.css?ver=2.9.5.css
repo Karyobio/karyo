@@ -2,7 +2,7 @@
     border: none;
     box-shadow: none;
     vertical-align: middle;
-    width: auto;
+    max-width: auto;
     display: inline;
 }
 .menu-image-hover-wrapper img.hovered-image,
