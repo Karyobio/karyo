@@ -1,0 +1,46 @@
+(function($) {
+"use strict";
+
+  $(document).ready(function(){
+
+    $(window).scroll(function(){
+      if ( $(this).scrollTop() > 200 ) {
+        $('.navbar').addClass("sticky-sticky");
+      }
+      else {
+        $('.navbar').removeClass("sticky-sticky");
+      };
+    });
+
+
+
+    $('.brabus-intro-wrapper h2').each(function () {
+      var text = $(this).data("text");
+      $(this).parents(".content").attr('data-text', text)
+    });
+
+
+    $('.menu-item a').on('click', function(){
+      $(this).addClass('open');
+      $('.menu-item a').not(this).removeClass('open');
+    });
+
+    $('section > div > div').each(function(){
+      if($(this).hasClass('cover')) {
+          $(this).parents("section").addClass('cover-bg');
+      }
+    });
+
+    if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1))
+    {
+      $('body').addClass('oldieBrowser');
+    }
+
+    //swiper-slide-active
+
+    //swiper-pagination-bullet-active
+
+
+
+  });
+})(jQuery);
